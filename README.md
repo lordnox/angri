@@ -1,0 +1,4 @@
+angri
+=====
+
+angularjs grid directive
