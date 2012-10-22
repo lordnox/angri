@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>angri - Bootstrap-AngularJS Table Directive</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <script src="../angri.js"></script>
+    <script src="./controller.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css"
+    rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script> 
+    <style>
+      div.pageNum {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        border-radius: 3px 3px 3px 3px;
+        background-color: #FFFFFF;
+        border-color: #DDDDDD;
+        border-image: none;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        float: left;
+        line-height: 38px;
+        padding: 0 14px;
+        color: #999999;
+      }
+
+      .bg-red {
+        background: red !important;
+      }
+      .bg-green {
+        background: green !important;
+      }
+    </style>
+  </head> 
+  <body ng-controller="Ctrl">
+    <div class="span12">
+      <table class="table table-bordered table-striped" ng-grid >
+          <legend>Todo List</legend>
+          <tr ng-repeat="todo in todos | myOwnFilter:'estimate':3">
+            <td title="Name" name="name">{{todo.name}}</td>
+            <td title="Progress" name="estimate">
+              <div class="progress progress-striped active">
+                <div class="bar" style="width: {{todo.estimate}}%;"></div>
+              </div>
+            </td>
+            <td title="Done" style="text-align: center;" ng-class="{'bg-red': !todo.done, 'bg-green': todo.done}"><i ng-class="{'icon-ok': todo.done, 'icon-remove': !todo.done}"></i></td>
+            <td title="Created" name="created_at">{{todo.created_at | date}}</td>
+            <td title="Updated">{{todo.updated_at | date}}</td>
+          </tr>
+      </table>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" ng-click="test()">Run some code!</button>
+      <form>
+        <legend>Add Todo</legend>
+        <label>Todo title</label>
+        <input type="text" class="input-medium" placeholder="Title..." ng-model="name"> 
+        <label>Todo date</label>
+        <input type="date" class="input-medium" placeholder="End date..." ng-model="due_date"> 
+        <br/>
+        <button type="submit" class="btn btn-primary" ng-click="add()">Add Todo</button>
+      </form>
+    </div>
+  </body>
+</html>
+
