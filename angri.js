@@ -40,12 +40,7 @@
               '</thead>',
     controls: '<div class="row">' +
                 '<div class="span4">' +
-                  '<select ng-model="angri.limit">' +
-                    '<option  value="10">10</option>' +
-                    '<option  value="15">15</option>' +
-                    '<option  value="30">30</option>' +
-                    '<option  value="60">60</option>' +
-                  '</select>' +
+                  '<select ng-options="option for option in angri.limits" ng-model="angri.limit"></select>' +
                 '</div>' +
                 '<div class="control-group span8" ng-class="{error: angri.filterError}">' +
                   '<input type="text" style="float:right;" class="input-medium" ng-model="angri.filter" placeholder="{{i18n.filter}}" name="filter" />' +
@@ -243,6 +238,7 @@
               debug           : element.attr('debug') !== undefined,   // kind of a debugging mode :-D
               forceLimit      : element.attr('forceLimit') !== undefined || element.attr('force-limit') !== undefined,   // force the size of the pages
               limit           : element.attr('limit')       || 10,      // max number of items on page
+              limits          : [10, 20, 30, 60],
               page            : element.attr('page')        || 1,       // current page of the list
               maxPages        : element.attr('pagination')  || 5,       // max pages to show in pagination, half.floor() on edges
               filterError     : false,  // computed value, tells if filter is in an error state
