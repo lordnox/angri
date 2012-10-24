@@ -10,12 +10,12 @@ controller. The only tag you need is ``ng-grid`` in your table directive.
     <table class="table table-bordered table-striped" ng-grid>    	
       <legend>Network List</legend>
         <tr ng-repeat="todo in todos">
-          <td title="Name" name="name">{{todo.name}}</td>
-		      	<td title="Estimate" name="estimate">{{todo.estimate}}</td>
-            <td title="Created At" name="created at">{{todo.created_at}}</td>
-            <td title="Updated At" name="upated at">{{todo.updated_at}}</td>
+     	  <td title="Name" name="name">{{todo.name}}</td>
+	      <td title="Estimate" name="estimate">{{todo.estimate}}</td>
+          <td title="Created At" name="created at">{{todo.created_at}}</td>
+      	  <td title="Updated At" name="upated at">{{todo.updated_at}}</td>
         </tr>		  
-    </table>``
+    </table>
 
 #### Customize table headers and sorting
 As you can see in the markup, the ``<td></td>`` contains two elements. The first is ``title="titleName"``, which allows
