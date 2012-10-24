@@ -1,5 +1,5 @@
 /*
- *  Copyright 2011 Johannes Hiermer, Tobias Kopelke
+ *  Copyright 2012 Johannes Hiemer, Tobias Kopelke
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
