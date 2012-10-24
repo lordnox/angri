@@ -24,6 +24,10 @@ you to specify the contents of the ``<th></th>`` tag of a specific column. The s
 the actual title will differ significantly from the property name in your JSON array. In the ``name="sortName"`` you
 are allowed to have whitespace, as they will be replaced automatically by an underscore for parsing.
 
+#### Filter in your ng-repeat
+You may apply any filter you like to your ``ng-repeat`` directive you like. It will be automatically wired through
+into angri and applied to your list.
+
 ### Pagesize
 angri provides a dropdown, which enables you to choose the number of items displayed in the table. The default list
 settings are: 10, 15, 30 and 60. If you would like to change the number of items displayed, you may change the line 
