@@ -255,6 +255,11 @@
             element.before($compile(Templates.controls)(scope));
             element.after($compile(Templates.footer)(scope));
 
+            scope.$watch('angri.limit', function() {
+              var lastPage = Math.ceil(scope.angri.filteredList().length / scope.angri.limit);
+              if(scope.angri.page > lastPage)
+                scope.angri.page = lastPage;
+            });
 
             scope.$watch('angri.filter', function() {
               var filterExpression = '';

@@ -1,4 +1,5 @@
 angri
 =====
 
-angularjs grid directive
+angri is an angularJS grid directive
+=====
