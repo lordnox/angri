@@ -40,18 +40,18 @@
   </head> 
   <body ng-controller="Ctrl">
     <div class="span12">
-      <table class="table table-bordered table-striped" ng-grid >
+      <table class="table table-bordered table-striped" angrid >
           <legend>Todo List</legend>
           <tr ng-repeat="todo in todos | myOwnFilter:'estimate':3">
-            <td title="Name" name="name">{{todo.name}}</td>
-            <td title="Progress" name="estimate">
+            <td angri-title="Name" angri-name="name">{{todo.name}}</td>
+            <td angri-title="Progress" angri-name="estimate">
               <div class="progress progress-striped active">
                 <div class="bar" style="width: {{todo.estimate}}%;"></div>
               </div>
             </td>
-            <td title="Done" style="text-align: center;" ng-class="{'bg-red': !todo.done, 'bg-green': todo.done}"><i ng-class="{'icon-ok': todo.done, 'icon-remove': !todo.done}"></i></td>
-            <td title="Created" name="created_at">{{todo.created_at | date}}</td>
-            <td title="Updated">{{todo.updated_at | date}}</td>
+            <td angri-title="Done" style="text-align: center;" ng-class="{'bg-red': !todo.done, 'bg-green': todo.done}"><i ng-class="{'icon-ok': todo.done, 'icon-remove': !todo.done}"></i></td>
+            <td angri-title="Created" angri-name="created_at">{{todo.created_at | date}}</td>
+            <td angri-title="Updated">{{todo.updated_at | date}}</td>
           </tr>
       </table>
     </div>

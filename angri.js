@@ -190,7 +190,7 @@
   });
 
   // the main directive: ngGrid
-  angriModule.directive('ngGrid',  function($compile) {
+  angriModule.directive('angrid',  function($compile) {
     return {
       compile: function compile(element) {
         var index             = 0,
@@ -207,8 +207,8 @@
         angular.forEach(tr.children('td'), function(elm) {
             var column  = angular.element(elm),
                 exp     = column.html().replace(/[{{}}\s]/g, ""),
-                name    = column.attr('name'),
-                title   = column.attr('title') || name;
+                name    = column.attr('angri-name'),
+                title   = column.attr('angri-title') || name;
 
             // build up a list of all header elements
             header.push({
@@ -223,7 +223,7 @@
             filter_hash[angular.lowercase(title)] = index;
             filter_hash[title] = index;
 
-            column.attr('title', null);
+            column.attr('angri-title', null);
             index ++;
         });
         element.prepend(Templates.header);
@@ -235,12 +235,12 @@
 
             scope.angri = {
               expression      : baseExpression,
-              debug           : element.attr('debug') !== undefined,   // kind of a debugging mode :-D
-              forceLimit      : element.attr('forceLimit') !== undefined || element.attr('force-limit') !== undefined,   // force the size of the pages
-              limit           : element.attr('limit')       || 10,      // max number of items on page
+              debug           : element.attr('angri-debug') !== undefined,   // kind of a debugging mode :-D
+              forceLimit      : element.attr('angri-forceLimit') !== undefined || element.attr('force-limit') !== undefined,   // force the size of the pages
+              limit           : element.attr('angri-limit')       || 10,      // max number of items on page
               limits          : [10, 20, 30, 60],
-              page            : element.attr('page')        || 1,       // current page of the list
-              maxPages        : element.attr('pagination')  || 5,       // max pages to show in pagination, half.floor() on edges
+              page            : element.attr('angri-page')        || 1,       // current page of the list
+              maxPages        : element.attr('angri-pagination')  || 5,       // max pages to show in pagination, half.floor() on edges
               filterError     : false,  // computed value, tells if filter is in an error state
               filter          : '',     // filter to be used with this grid
               header          : header, // header that was found for the grid
