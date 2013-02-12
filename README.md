@@ -43,7 +43,7 @@ If you like to contribute a patch or enhancement, feel free!
 
 ## License
  
-Copyright 2012 Johannes Hiermer, Tobias Kopelke
+Copyright 2012 Johannes Hiemer, Tobias Kopelke
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
